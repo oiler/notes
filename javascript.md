@@ -53,6 +53,79 @@ _immediately invoked function expressions_
 }());
 ```
 
+[_bind()_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+```
+cook. = pizza.cook.bind(pizza);
+
+```
+
+_closures_
+store function state, even after the function has returned
+```
+var cook = function cook() {
+    var toppings = ['mushrooms', 'onions', 'peppers'];
+    var addToppings;
+    addToppings = function addToppings() {
+        return toppings;
+    }
+    return { 
+        addToppings: addToppings
+    };
+};
+
+var pizza = cook();
+console.log( pizza.addToppings() );
+```
+
+_arity_ & _extend_
+is the number of variables that are passed as parameters in function
+```
+function cookPizza( toppings, cheese, sauce, dough, cut ); // arity = 5
+```
+better way to do this is pass params as objects (need _extend_ method API in lib)
+```
+function cookPizza(options) {
+    return $.extend({}, newPizza, options);
+}
+var newPizza = cookPizza({
+    toppings: ['mushrooms', 'onions', 'peppers'],
+    cheese: 'extra',
+    sauce: 'regular',
+    dough: 'pan',
+    cut: 'normal'
+});
+```
+
+_polymorphism_ & [_slice_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+behave differently based on the parameters you pass into them
+```
+function cookPizza(options) {
+    var args = [].slice.call(arguments, 0); // is same as Array.prototype.slice.call(arguments, 0);
+    var toppings,
+        quantity
+    ;
+    if( typeof options === 'string' ) {
+        toppings = options;
+        args.shift();
+    }
+    return('I need ' + args + ' pizzas with ' + toppings + ' on them!');
+}
+var pizza = cookPizza( 'mushrooms', 2 );
+// would need better typeof / shift logic if we wanted to do more with args, such as flip the order or add more
+var pizza2 = cookPizza( 2, 'mushrooms' ); // "I need 2,mushrooms pizzas with undefined on them!"
+```
+
+_fuild method chaining_
+what jquery and d3 do
+```
+$('.myDivClass').hide().css('color','black').show();
+```
+
+
+
+
+
+
 
 
 ##  [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
