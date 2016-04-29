@@ -1,5 +1,24 @@
 # Javascript
 
+
+## Functions
+"Wherever possible, make sure that your functions don’t change anything outside the function itself. Return amended copies rather than originals."
+
+_function declaration_
+```
+function pizza() {
+    // code
+}
+```
+
+_function expression_
+```
+var pizza = function() {
+    // code
+};
+```
+
+
 ##  [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
 [Differences from non-strict to strict](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode)
