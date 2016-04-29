@@ -18,6 +18,42 @@ var pizza = function() {
 };
 ```
 
+_method literals_
+* are function expressions assigned to object literals
+* group related functions together, for better organization
+```
+var pizza = {
+    dough: function() {},
+    toppings: function() {}
+};
+```
+
+_named function expression_
+```
+var pizza = function pizza() {
+    // code
+};
+```
+
+_lambdas_
+```
+var pizza = function pizza() {
+    var toppings = '';
+    ["mushrooms", "onions", "peppers"].forEach( function addTo(item) {
+        toppings += ' '+item;
+    });
+    return toppings;
+};
+```
+
+_immediately invoked function expressions_
+```
+(function() {
+    // pizza code
+}());
+```
+
+
 
 ##  [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
