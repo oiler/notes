@@ -135,9 +135,10 @@ for example, setTimeout is api provided by the browser
 event loop pulls from queue and pushes into stack, if stack is clear
 
 _more_
-* [Visualize event loop](http://latentflip.com/loupe)
-* [JS debugging via Chrome DevTools Sources panel](https://developer.chrome.com/devtools/docs/javascript-debugging)
-* [How to Step Through the Code](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/step-code?hl=en)
+* [Video - Philip Roberts JSConf 2014](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+* [Live - visualize event loop](http://latentflip.com/loupe)
+* [Dev Tools - JS debugging via Chrome DevTools Sources panel](https://developer.chrome.com/devtools/docs/javascript-debugging)
+* [Dev Tools - How to Step Through the Code](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/step-code?hl=en)
 
 
 
