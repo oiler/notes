@@ -124,6 +124,22 @@ $('.myDivClass').hide().css('color','black').show();
 
 
 
+## [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+JS is single threaded, features a call stack and queue  
+when something is running in call stack, browser can't do anything else  
+solution is async callbacks  
+concurrency & the event loop  
+browser is more than just runtime  
+for example, setTimeout is api provided by the browser  
+    move from the stack to the webapi into task queue  
+event loop pulls from queue and pushes into stack, if stack is clear
+
+_more_
+* [Visualize event loop](http://latentflip.com/loupe)
+* [JS debugging via Chrome DevTools Sources panel](https://developer.chrome.com/devtools/docs/javascript-debugging)
+* [How to Step Through the Code](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/step-code?hl=en)
+
+
 
 
 
