@@ -1,5 +1,10 @@
 # Javascript
 
+Favor _composition_ over _inheritance_
+design types around what they do, not what they are
+
+
+
 
 ## Functions
 "Wherever possible, make sure that your functions don’t change anything outside the function itself. Return amended copies rather than originals."
@@ -37,13 +42,14 @@ var pizza = function pizza() {
 
 _lambdas_
 ```
-var pizza = function pizza() {
-    var toppings = '';
-    ["mushrooms", "onions", "peppers"].forEach( function addTo(item) {
-        toppings += ' '+item;
+var pizza = function pizza(toppings) {
+    var pizzaWithToppings = '';
+    toppings.forEach( function addTo(item) {
+        pizzaWithToppings += item + ' ';
     });
-    return toppings;
+    return pizzaWithToppings;
 };
+console.log(pizza(["mushrooms", "onions", "peppers"]));
 ```
 
 _immediately invoked function expressions_
@@ -159,3 +165,31 @@ _more_
 
 
 
+
+## ES6
+
+[_arrow functions_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+give shorter function syntax, allowing for smaller inline single purpose functions
+parentheses are optional if only one parameter
+
+```
+"use strict";
+function addToppings(toppings) {
+    let pizzaWithToppings = '';
+    toppings.forEach( function addTo(item) {
+        pizzaWithToppings += item + ' ';
+    });
+    return pizzaWithToppings;
+}
+
+// traditional
+var pizza = function pizza(toppings) {
+    return addToppings(toppings);
+};
+
+// arrow
+const pizzaa = (toppings) => addToppings(toppings);
+
+console.log('reglr:', pizza(["mushrooms", "onions", "peppers"]));
+console.log('arrow:', pizzaa(["mushrooms", "onions", "peppers"]));
+```
