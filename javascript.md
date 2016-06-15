@@ -1,9 +1,69 @@
 # Javascript
 
-Favor _composition_ over _inheritance_
-design types around what they do, not what they are
+## High Level 
+* Favor _composition_ over _inheritance_
+** design types around what they do, not what they are
+** use *can-do*, *has-a*, or *uses-a* relationships instead of *is-a* relationships.
+** "new and this are some kind of unintuitive weird clown rainbow trap that you trip over all the time."[source](https://www.youtube.com/watch?v=ImwrezYhw4w)
 
+## Examples
+object _composition_ with [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
+```
+const barker = (state) => ({
+    bark: () => console.log('Woof, I am ' + state.name)
+})
+
+const driver = (state) => ({
+    drive: () => state.position = state.position + state.speed
+})
+
+barker({name: 'karo'}).bark()
+// woof, i am karo
+
+const murderRobotDog = (name) => {
+    let state = {
+        name,
+        speed: 100,
+        position: 0
+    }
+    return Object.assign
+        {},
+        barker(state),
+        driver(state),
+        killer(state)
+    }
+}
+murderRobotDog('sniffles').bark()
+// woof, i am sniffles
+```
+
+_factories_
+are functions that create objects, to use instead of classes
+es5
+```
+var pizza = function pizza() {
+    var toppings = 'mushrooms, meatballs';
+    return {
+        cook: function cook() {
+            console.log(toppings);
+        }
+    }
+}
+var myPizza = pizza();
+myPizza.cook();
+```
+es6
+```
+const pizza = () => {
+    const toppings = 'mushrooms, meatballs';
+    return {
+        cook: () => console.log(toppings)
+    }
+}
+const myPizza = pizza();
+myPizza.cook();
+```
 
 
 ## Functions
@@ -128,6 +188,22 @@ $('.myDivClass').hide().css('color','black').show();
 ```
 
 
+
+
+_[.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_
+```
+var pizzas = [
+    { person: "marky", toppings: "cheese" },
+    { person: "ricky", toppings: ["mushrooms", "meatball"] },
+    { person: "danny", toppings: "spinach" },
+    { person: "terry", toppings: "cheese" }
+]
+var isPlain = function(pizza) {
+    return pizza.toppings === 'cheese'
+}
+var cheesePizzas = pizzas.filter(isPlain);
+console.log(cheesePizzas);
+```
 
 
 ## [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
