@@ -190,19 +190,38 @@ $('.myDivClass').hide().css('color','black').show();
 
 
 
-_[.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_
+_[filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_
+_[map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)_
+_[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)_
 ```
-var pizzas = [
-    { person: "marky", toppings: "cheese" },
-    { person: "ricky", toppings: ["mushrooms", "meatball"] },
-    { person: "danny", toppings: "spinach" },
-    { person: "terry", toppings: "cheese" }
-]
-var isPlain = function(pizza) {
-    return pizza.toppings === 'cheese'
+var pizza = {};
+var toppings = ["mushrooms","meatballs"];
+
+// filter: create new array with all elements that **pass the test** implemented by the provided function.
+function addToppings(arg) {
+  if (typeof arg === "string") {
+        return arg;
+    }
 }
-var cheesePizzas = pizzas.filter(isPlain);
-console.log(cheesePizzas);
+
+// reduce: simplify to a **single value** by running function on each in original (from left-to-right)
+function listToppings(previousValue, currentValue, currentIndex, array) {
+  return previousValue + ' ' + currentValue;
+}
+
+// map: create new array by calling a function on **all** elements in original
+function doubleMeat(currentValue, index, array) {
+    if (currentValue === "meatballs") {
+        return 'double ' + currentValue;
+    } else {
+        return currentValue;
+    }
+}
+
+pizza.filtered = toppings.filter(addToppings);
+pizza.reduced = toppings.reduce(listToppings);
+pizza.mapped = toppings.map(doubleMeat);
+console.log(pizza);
 ```
 
 
