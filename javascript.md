@@ -190,17 +190,17 @@ $('.myDivClass').hide().css('color','black').show();
 
 
 
-_[filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_
-_[map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)_
-_[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)_
+_[filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_,
+_[map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)_,
+_[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)_ methods
 ```
 var pizza = {};
 var toppings = ["mushrooms","meatballs"];
 
 // filter: create new array with all elements that **pass the test** implemented by the provided function.
-function addToppings(arg) {
-  if (typeof arg === "string") {
-        return arg;
+function addToppings(elem, index, array) {
+  if (typeof elem === "string") {
+        return elem;
     }
 }
 
@@ -223,6 +223,7 @@ pizza.reduced = toppings.reduce(listToppings);
 pizza.mapped = toppings.map(doubleMeat);
 console.log(pizza);
 ```
+[more](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
 
 
 ## [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
