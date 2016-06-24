@@ -1,11 +1,11 @@
 # Javascript
 
 ## High Level 
-* Favor _composition_ over _inheritance_
-** design types around what they do, not what they are
-** use *can-do*, *has-a*, or *uses-a* relationships instead of *is-a* relationships.
-** "new and this are some kind of unintuitive weird clown rainbow trap that you trip over all the time."[source](https://www.youtube.com/watch?v=ImwrezYhw4w)
 
+* Favor _composition_ over _inheritance_
+** design types around **what they do**, not what they are
+** use **can-do**, **has-a**, or **uses-a** relationships instead of *is-a* relationships.
+** uses of "*new* and *this* are some kind of unintuitive weird clown rainbow trap that you trip over all the time." [source](https://www.youtube.com/watch?v=ImwrezYhw4w)
 
 ## Object methods
 
@@ -18,13 +18,14 @@ var pizza = {
 var dough = { "type": "thin crust" };
 ```
 
-[assign][](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+[assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 ```
 var lunchOrder = Object.assign({}, pizza, dough);
 console.log(lunchOrder);
 // { toppings: [ 'mushrooms', 'meatballs' ], sauce: 'light', cheese: 'extra', type: 'thin crust' }
 ```
 [keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+```
 console.log(Object.keys(pizza)); 
 // returns: [ 'toppings', 'sauce', 'cheese' ]
 console.log(Object.keys(pizza.toppings)); 
@@ -36,6 +37,7 @@ Object.keys(pizza.toppings).forEach(function(key) {
 ```
 
 ## Examples of composition
+
 object _composition_ with [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
 ```
@@ -67,11 +69,11 @@ murderRobotDog('sniffles').bark()
 // woof, i am sniffles
 ```
 
-_factories_
+[_factory functions_](https://www.youtube.com/watch?v=ImwrezYhw4w)
 are functions that create objects, to use instead of classes
-es5
+one way - es5
 ```
-var pizza = function pizza() {
+function pizza() {
     var toppings = 'mushrooms, meatballs';
     return {
         cook: function cook() {
