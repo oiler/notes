@@ -6,6 +6,22 @@
 ** use *can-do*, *has-a*, or *uses-a* relationships instead of *is-a* relationships.
 ** "new and this are some kind of unintuitive weird clown rainbow trap that you trip over all the time."[source](https://www.youtube.com/watch?v=ImwrezYhw4w)
 
+
+## Object methods
+
+[assign][](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+```
+var pizza = { 
+    "toppings"  : ["mushrooms", "meatballs"],
+    "sauce"     : "light",
+    "cheese"    : "extra"
+};
+var dough = { "type": "thin crust" };
+
+var lunchOrder = Object.assign(pizza, dough);
+console.log(lunchOrder);
+```
+
 ## Examples
 object _composition_ with [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
@@ -223,8 +239,8 @@ pizza.reduced = toppings.reduce(listToppings);
 pizza.mapped = toppings.map(doubleMeat);
 console.log(pizza);
 ```
-[more](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
-
+[more1](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
+[more2](http://www.macwright.org/2015/01/03/reduce-juice.html)
 
 ## [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 JS is single threaded, features a call stack and queue  
@@ -289,3 +305,8 @@ const pizzaa = (toppings) => addToppings(toppings);
 console.log('reglr:', pizza(["mushrooms", "onions", "peppers"]));
 console.log('arrow:', pizzaa(["mushrooms", "onions", "peppers"]));
 ```
+
+
+binary floating point
+
+http://rainsoft.io/how-three-dots-changed-javascript/
