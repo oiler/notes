@@ -3,9 +3,9 @@
 ## High Level 
 
 * Favor _composition_ over _inheritance_
-** design types around **what they do**, not what they are
-** use **can-do**, **has-a**, or **uses-a** relationships instead of *is-a* relationships.
-** uses of "*new* and *this* are some kind of unintuitive weird clown rainbow trap that you trip over all the time." [source](https://www.youtube.com/watch?v=ImwrezYhw4w)
+* design types around **what they do**, not what they are
+* use **can-do**, **has-a**, or **uses-a** relationships instead of *is-a* relationships.
+* uses of "*new* and *this* are some kind of unintuitive weird clown rainbow trap that you trip over all the time." [source](https://www.youtube.com/watch?v=ImwrezYhw4w)
 
 ## Object methods
 
