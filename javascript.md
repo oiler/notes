@@ -9,7 +9,6 @@
 
 ## Object methods
 
-[assign][](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 ```
 var pizza = { 
     "toppings"  : ["mushrooms", "meatballs"],
@@ -17,12 +16,26 @@ var pizza = {
     "cheese"    : "extra"
 };
 var dough = { "type": "thin crust" };
-
-var lunchOrder = Object.assign(pizza, dough);
-console.log(lunchOrder);
 ```
 
-## Examples
+[assign][](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+```
+var lunchOrder = Object.assign({}, pizza, dough);
+console.log(lunchOrder);
+// { toppings: [ 'mushrooms', 'meatballs' ], sauce: 'light', cheese: 'extra', type: 'thin crust' }
+```
+[keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+console.log(Object.keys(pizza)); 
+// returns: [ 'toppings', 'sauce', 'cheese' ]
+console.log(Object.keys(pizza.toppings)); 
+// returns: [ '0', '1' ]
+Object.keys(pizza.toppings).forEach(function(key) {
+    console.log(key, pizza.toppings[key]);
+});
+// returns: 0 mushrooms \n 1 meatballs
+```
+
+## Examples of composition
 object _composition_ with [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
 ```
@@ -80,6 +93,48 @@ const pizza = () => {
 const myPizza = pizza();
 myPizza.cook();
 ```
+
+## Manipulating arrays
+
+_[filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_,
+_[map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)_,
+_[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)_ methods
+```
+var pizza = {};
+var toppings = ["mushrooms","meatballs"];
+
+// filter: create new array with all elements that **pass the test** implemented by the provided function.
+function addToppings(elem, index, array) {
+  if (typeof elem === "string") {
+        return elem;
+    }
+}
+
+// reduce: simplify to a **single value** by running function on each in original (from left-to-right)
+function listToppings(previousValue, currentValue, currentIndex, array) {
+  return previousValue + ' ' + currentValue;
+}
+
+// map: create new array by calling a function on **all** elements in original
+function doubleMeat(currentValue, index, array) {
+    if (currentValue === "meatballs") {
+        return 'double ' + currentValue;
+    } else {
+        return currentValue;
+    }
+}
+
+pizza.filtered = toppings.filter(addToppings);
+pizza.reduced = toppings.reduce(listToppings);
+pizza.mapped = toppings.map(doubleMeat);
+console.log(pizza);
+// returns: 
+{ filtered: [ 'mushrooms', 'meatballs' ],
+  reduced: 'mushrooms meatballs',
+  mapped: [ 'mushrooms', 'double meatballs' ] }
+```
+[more1](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
+[more2](http://www.macwright.org/2015/01/03/reduce-juice.html)
 
 
 ## Functions
@@ -206,41 +261,6 @@ $('.myDivClass').hide().css('color','black').show();
 
 
 
-_[filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_,
-_[map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)_,
-_[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)_ methods
-```
-var pizza = {};
-var toppings = ["mushrooms","meatballs"];
-
-// filter: create new array with all elements that **pass the test** implemented by the provided function.
-function addToppings(elem, index, array) {
-  if (typeof elem === "string") {
-        return elem;
-    }
-}
-
-// reduce: simplify to a **single value** by running function on each in original (from left-to-right)
-function listToppings(previousValue, currentValue, currentIndex, array) {
-  return previousValue + ' ' + currentValue;
-}
-
-// map: create new array by calling a function on **all** elements in original
-function doubleMeat(currentValue, index, array) {
-    if (currentValue === "meatballs") {
-        return 'double ' + currentValue;
-    } else {
-        return currentValue;
-    }
-}
-
-pizza.filtered = toppings.filter(addToppings);
-pizza.reduced = toppings.reduce(listToppings);
-pizza.mapped = toppings.map(doubleMeat);
-console.log(pizza);
-```
-[more1](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
-[more2](http://www.macwright.org/2015/01/03/reduce-juice.html)
 
 ## [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 JS is single threaded, features a call stack and queue  
