@@ -31,10 +31,47 @@ $ `gst`
 * `local` can be used inside function as private variable
 * code:  
 ```shell
-function gp() {  
+function gph() {  
     git push $1 $2
 }
 ```
 * usage:  
 $ `gp origin master`
+
+## control structures
+* code:
+```shell
+if[[ -n $1 ]]; then
+  message=$@
+else
+  message="it is done!"
+fi
+```
+if first param has info, put in message, else say it is done
+
+* code:
+```shell
+case "$1" in
+one|first)  echo "the 1st thing";;
+two|second) echo "the 2nd thing";;
+```
+didnt have time to write the default
+
+* code:
+```shell
+for(( i=1;i<20;i+=2))
+do
+  echo "stuff"
+done
+```
+
+* code:
+```shell
+for plugin_id in `cat plugins.txt`
+do
+  wp plugin install $plugin_id
+done
+```
+plugins.txt is a list of plugin names, so this loops through that and installs
+
 
