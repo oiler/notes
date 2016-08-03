@@ -21,7 +21,7 @@ if( typeof pizza !== 'undefined' ) {
 
 ## Object methods
 
-```
+```javascript
 var pizza = { 
     "toppings"  : ["mushrooms", "meatballs"],
     "sauce"     : "light",
@@ -31,13 +31,13 @@ var dough = { "type": "thin crust" };
 ```
 
 [assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
-```
+```javascript
 var lunchOrder = Object.assign({}, pizza, dough);
 console.log(lunchOrder);
 // { toppings: [ 'mushrooms', 'meatballs' ], sauce: 'light', cheese: 'extra', type: 'thin crust' }
 ```
 [keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
-```
+```javascript
 console.log(Object.keys(pizza)); 
 // returns: [ 'toppings', 'sauce', 'cheese' ]
 console.log(Object.keys(pizza.toppings)); 
@@ -52,7 +52,7 @@ Object.keys(pizza.toppings).forEach(function(key) {
 
 object _composition_ with [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
-```
+```javascript
 const barker = (state) => ({
     bark: () => console.log('Woof, I am ' + state.name)
 })
@@ -85,7 +85,7 @@ murderRobotDog('sniffles').bark()
 are functions that create objects, to use instead of classes
 
 es5
-```
+```javascript
 function pizza() {
     var toppings = 'mushrooms, meatballs';
     return {
@@ -98,7 +98,7 @@ var myPizza = pizza();
 myPizza.cook();
 ```
 es6
-```
+```javascript
 const pizza = () => {
     const toppings = 'mushrooms, meatballs';
     return {
@@ -114,7 +114,7 @@ myPizza.cook();
 _[filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)_,
 _[map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)_,
 _[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)_ methods
-```
+```javascript
 var pizza = {};
 var toppings = ["mushrooms","meatballs"];
 
@@ -156,14 +156,14 @@ console.log(pizza);
 "Wherever possible, make sure that your functions don’t change anything outside the function itself. Return amended copies rather than originals."
 
 _function declaration_
-```
+```javascript
 function pizza() {
     // code
 }
 ```
 
 _function expression_
-```
+```javascript
 var pizza = function() {
     // code
 };
@@ -172,7 +172,7 @@ var pizza = function() {
 _method literals_
 * are function expressions assigned to object literals
 * group related functions together, for better organization
-```
+```javascript
 var pizza = {
     dough: function() {},
     toppings: function() {}
@@ -180,14 +180,14 @@ var pizza = {
 ```
 
 _named function expression_
-```
+```javascript
 var pizza = function pizza() {
     // code
 };
 ```
 
 _lambdas_
-```
+```javascript
 var pizza = function pizza(toppings) {
     var pizzaWithToppings = '';
     toppings.forEach( function addTo(item) {
@@ -199,21 +199,21 @@ console.log(pizza(["mushrooms", "onions", "peppers"]));
 ```
 
 _immediately invoked function expressions_
-```
+```javascript
 (function() {
     // pizza code
 }());
 ```
 
 [_bind()_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
-```
+```javascript
 cook. = pizza.cook.bind(pizza);
 
 ```
 
 _closures_
 store function state, even after the function has returned
-```
+```javascript
 var cook = function cook() {
     var toppings = ['mushrooms', 'onions', 'peppers'];
     var addToppings;
@@ -231,11 +231,11 @@ console.log( pizza.addToppings() );
 
 _arity_ & _extend_
 is the number of variables that are passed as parameters in function
-```
+```javascript
 function cookPizza( toppings, cheese, sauce, dough, cut ); // arity = 5
 ```
 better way to do this is pass params as objects (need _extend_ method API in lib)
-```
+```javascript
 function cookPizza(options) {
     return $.extend({}, newPizza, options);
 }
@@ -250,7 +250,7 @@ var newPizza = cookPizza({
 
 _polymorphism_ & [_slice_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 behave differently based on the parameters you pass into them
-```
+```javascript
 function cookPizza(options) {
     var args = [].slice.call(arguments, 0); // is same as Array.prototype.slice.call(arguments, 0);
     var toppings,
@@ -269,7 +269,7 @@ var pizza2 = cookPizza( 2, 'mushrooms' ); // "I need 2,mushrooms pizzas with und
 
 _fuild method chaining_
 what jquery and d3 do
-```
+```javascript
 $('.myDivClass').hide().css('color','black').show();
 ```
 
@@ -319,7 +319,7 @@ _more_
 give shorter function syntax, allowing for smaller inline single purpose functions
 parentheses are optional if only one parameter
 
-```
+```javascript
 "use strict";
 function addToppings(toppings) {
     let pizzaWithToppings = '';
