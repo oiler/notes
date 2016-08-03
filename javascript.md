@@ -7,6 +7,18 @@
 * use **can-do**, **has-a**, or **uses-a** relationships instead of *is-a* relationships.
 * uses of "*new* and *this* are some kind of unintuitive weird clown rainbow trap that you trip over all the time." [source](https://www.youtube.com/watch?v=ImwrezYhw4w)
 
+## Truthiness
+* does a variable exist?
+```
+if( typeof pizza !== 'undefined' ) {
+    // pizza has been declared so you can proceed
+}
+```
+
+* `if (value) { }` will return FALSE if the value is any of the following:
+  * null, undefined, NaN, empty string, 0, false
+
+
 ## Object methods
 
 ```
@@ -71,7 +83,8 @@ murderRobotDog('sniffles').bark()
 
 [_factory functions_](https://www.youtube.com/watch?v=ImwrezYhw4w)
 are functions that create objects, to use instead of classes
-one way - es5
+
+es5
 ```
 function pizza() {
     var toppings = 'mushrooms, meatballs';
