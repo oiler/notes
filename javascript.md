@@ -9,7 +9,7 @@
 
 ## Truthiness
 * does a variable exist?
-```
+...```javascript
 if( typeof pizza !== 'undefined' ) {
     // pizza has been declared so you can proceed
 }
