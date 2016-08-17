@@ -7,6 +7,14 @@
 * use **can-do**, **has-a**, or **uses-a** relationships instead of *is-a* relationships.
 * uses of "*new* and *this* are some kind of unintuitive weird clown rainbow trap that you trip over all the time." [source](https://www.youtube.com/watch?v=ImwrezYhw4w)
 
+## Invocation
+Four kinds of invocation:
+
+* function invocation: alert('Hello World!')
+* method invocation: console.log('Hello World!')
+* constructor invocation: new RegExp('\\d')
+* indirect invocation: alert.call(undefined, 'Hello World!')
+
 ## Truthiness
 * does a variable exist?
 ```javascript
@@ -21,6 +29,8 @@ if( typeof pizza !== 'undefined' ) {
 
 ## Object methods
 
+given the following:
+
 ```javascript
 var pizza = { 
     "toppings"  : ["mushrooms", "meatballs"],
@@ -30,13 +40,13 @@ var pizza = {
 var dough = { "type": "thin crust" };
 ```
 
-[assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+[.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 ```javascript
 var lunchOrder = Object.assign({}, pizza, dough);
 console.log(lunchOrder);
 // { toppings: [ 'mushrooms', 'meatballs' ], sauce: 'light', cheese: 'extra', type: 'thin crust' }
 ```
-[keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+[.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 ```javascript
 console.log(Object.keys(pizza)); 
 // returns: [ 'toppings', 'sauce', 'cheese' ]
@@ -148,7 +158,7 @@ console.log(pizza);
   reduced: 'mushrooms meatballs',
   mapped: [ 'mushrooms', 'double meatballs' ] }
 ```
-[more1](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
+[more1](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)  
 [more2](http://www.macwright.org/2015/01/03/reduce-juice.html)
 
 
@@ -206,9 +216,19 @@ _immediately invoked function expressions_
 ```
 
 [_bind()_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+use bind to control invocation and to properly assign `this`
 ```javascript
-cook. = pizza.cook.bind(pizza);
-
+var pizza = {
+    toppings: ['mushrooms','meatballs'],
+    cook: function() {
+        console.log(this.toppings);
+    }
+}
+var button = document.getElementById('mybutton');
+button.addEventListener(
+    'click',
+    pizza.cook.bind(pizza)
+);
 ```
 
 _closures_
@@ -287,7 +307,7 @@ for example, setTimeout is api provided by the browser
     move from the stack to the webapi into task queue  
 event loop pulls from queue and pushes into stack, if stack is clear
 
-_more_
+_more on event loop_
 * [Video - Philip Roberts JSConf 2014](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 * [Live - visualize event loop](http://latentflip.com/loupe)
 * [Dev Tools - JS debugging via Chrome DevTools Sources panel](https://developer.chrome.com/devtools/docs/javascript-debugging)
@@ -341,7 +361,15 @@ console.log('reglr:', pizza(["mushrooms", "onions", "peppers"]));
 console.log('arrow:', pizzaa(["mushrooms", "onions", "peppers"]));
 ```
 
+## Explainers
+* [binary floating point](http://rainsoft.io/how-three-dots-changed-javascript/)
+* [this](https://rainsoft.io/gentle-explanation-of-this-in-javascript/)
 
-binary floating point
+## More Vocabulary
+* **first-class functions** = functions are objects
+* **higher-order function** = functions can take one or more functions as arguments and can return a function as its result
+* **pure function** = a function where the return value is only determined by its input values, without observable side effects (iow, given the same input, it will return the same value every time no matter what else
+* **classical inheritance** = instances inherit from classes, usually with the *new* keyword; they create tight coupling or hierarchies/taxonomies
+* **prototypal Inheritanc** = instances inherit directly from other objects, usually with factory functions or the `Object.create()`
+* **factory functions** = a factory functions is a function or method that returns objects
 
-http://rainsoft.io/how-three-dots-changed-javascript/
