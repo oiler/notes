@@ -1,29 +1,31 @@
 # Trello Shortcuts
 
-w	board menu
-/	focus on search box
+KEY | NAME
+--- | ----
+w | board menu
+/ | focus on search box
+ |
+c | archive
+<> | move to adjacent list
+ |
+f | open filter menu
+x | clear filters
+ |
+n | new card
+t | edit title
+e | quick edit
+l | label
+d | due date
+m | members
 
-c	archive
-<>	move to adjacent list
-
-f	open filter menu
-x	clear filters
-
-n	new card
-t	edit title
-e	quick edit
-l	label
-d	due date
-m	members
-
-full list:
+##full list
 https://trello.com/shortcuts
 
 * * *
 
 # Github Markdown
 
-# Basic Non-Obvious Stuff
+## Basic Non-Obvious Stuff
 ```
 * italics
 ** bold
@@ -31,11 +33,9 @@ https://trello.com/shortcuts
 ![embedded image link]
 - [ ] tasks
 * * * horizontal rule
-
-
 ```
 
-tables
+## Tables
 ```
 header1 | header2
 ------- | -------
@@ -44,7 +44,7 @@ more cells | final cell
 
 ```
 
-full list
+## full list
 https://guides.github.com/features/mastering-markdown/
 
 * * *
