@@ -4,13 +4,10 @@ KEY | NAME
 --- | ----
 w | board menu
 / | focus on search box
- |
 c | archive
 <> | move to adjacent list
- |
 f | open filter menu
 x | clear filters
- |
 n | new card
 t | edit title
 e | quick edit
@@ -18,7 +15,7 @@ l | label
 d | due date
 m | members
 
-##full list
+## full list
 https://trello.com/shortcuts
 
 * * *
