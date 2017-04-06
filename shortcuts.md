@@ -45,3 +45,11 @@ more cells | final cell
 https://guides.github.com/features/mastering-markdown/
 
 * * *
+
+# MySQL
+
+## connect to local MAMP
+Use a specific username and password
+```
+/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+```
