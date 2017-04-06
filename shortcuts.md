@@ -53,3 +53,31 @@ Use a specific username and password
 ```
 /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
 ```
+
+* * * 
+
+# General
+
+## Time In Seconds
+
+key | val
+--- | ---
+day | 86400
+week | 604800
+month | 2629000
+year = 31536000
+
+##  Kill DNS cache on OS X
+
+```
+sudo killall -HUP mDNSResponder
+```
+
+## google spreadsheet data
+```
+https://spreadsheets.google.com/feeds/list/PUT-KEY-HERE/od6/public/values?alt=json
+```
+
+
+
+
