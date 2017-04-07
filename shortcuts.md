@@ -78,6 +78,14 @@ sudo killall -HUP mDNSResponder
 https://spreadsheets.google.com/feeds/list/PUT-KEY-HERE/od6/public/values?alt=json
 ```
 
+## S3 upload public
+```
+aws s3 cp FILENAME s3://oiler/FOLDER/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+
+```
+
+
+
 
 
 
