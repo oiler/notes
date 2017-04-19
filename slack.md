@@ -26,7 +26,7 @@ Obviously, these are good when you need to talk to someone directly. But conside
 These are equal to closed door meetings. People notice when they walk by that a door is closed. Having too many closed doors makes people (rightfully) suspicious.
 
 ### Group DMs
-Apply the same description as a private channel, expect add in that the user experience here is terrible. Ask, what is this group for? Why does it exist? Is it to organize the same group of people who always get coffee at 4pm? Whatever the reason, click the link that says "convert to private channel" and take it there. Searching for the right group DM in Slack is one of its worst "features".
+Apply the same description as a private channel, except add in that the user experience here is terrible. Ask, what is this group for? Why does it exist? Is it to organize the same group of people who always get coffee at 4pm? Whatever the reason, click the link that says "convert to private channel" and take it there. Searching for the right group DM in Slack is one of its worst "features".
 
 
 ## Channel Structure
@@ -72,6 +72,7 @@ This is better:
 `> hi so when you're free can we chat about something?`
 
 This is best:
+
 ` > hi, when you get a chance can you provide feedback on [link to thing]`
 
 
@@ -79,7 +80,7 @@ This is best:
 
 When you need someone's or a group of people's attention, there are various ways to alert them.
 
-In order of magnitude (with the most urgent and widest at the top) you should use:
+In order of magnitude (with the most urgent and widest audience at the top) you should use:
 
 * @channel 
 * @here
