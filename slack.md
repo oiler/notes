@@ -62,6 +62,15 @@ Apply the same description as a private channel, except add in that the user exp
 Here's a visualization for how your team could be organized. Work is done in project channels. Team channels are public facing and welcoming for outsiders.
 ![Slack Channel Viz](https://raw.githubusercontent.com/oiler/notes/master/assets/slack-viz-v1.png)
 
+For simplicity of this visual, accept that all of your team (named "pizza") works on all projects together. That's never how things work in reality, but it makes this visual easier to understand if we suspend disbelief on this point. Here's how to read this visual:
+
+* salad team member #4 is working with your team on project 1
+* sushi team member #3 needs to ask your team question 
+* sandwich team member #1 is a stakeholder on project 2
+* all are free to join at will in general purpose channels
+* no one is in the cats channel
+
+
 ## Direct Messages
 * Be respectful for the number of messages you send in DMs. Group thoughts together. Assume the person you are writing is in the middle of screensharing to a large audience, and they forgot to mute or turn off notifications.
 * For example:
