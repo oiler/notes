@@ -1,9 +1,18 @@
 # Slack Guidelines
 
 
+## Mission
+
+These notes are intended to act as guidelines (and not rules). Every company is different, and every team has its own dynamic. But as the number of users of any Slack team grows, so does the number of different expectations people have of it. This document is an attempt to set forth a set of guidelines that a team _could_ adopt, in order to set the tone for how conversations should happen. 
+
+For many, the introduction of Slack into the workplace has added a new layer of demand for attention, distraction, and worry. 
+
+If you've ever seen a coworker who's Slack app is filled with unread notifications, then Slack is failing your team. If you are someone who's Slack app is filled with unread notifications, then Slack is failing you. If you know of a channel in Slack where a single message posted can hijack an entire day's work for everyone in the channel, Slack is failing your company. Only by resetting expectations — across the entire organization — for how Slack communication should be used, can you allow the tool to benefit — and not hurt — your team's communication.
+
 ## Top Principles
 
-* Understand that when you DM or @ mention someone, most people will by default receive this as an urgent message from you. As much as you can, label the messages that dont require immediate attention as such.
+* Understand that when you DM or @ mention someone, most people will by default receive this as an urgent message from you. As much as you can, label the direct messages that dont require immediate attention as such.
+* Don't do work in DMs. Don't leave Group DM threads unlabeled. Use channels.
 * It's okay to close Slack for periods of time. It's okay to not be available every second of the day. Just make sure there's a way to let your colleagues know when you're away (ie, shared calendar, status update, post message in public room).
 * Strictly limit Slack usage in meetings; it should only be open for on-topic discussions. If Slack didn't exist, and in every meeting you had everyone was in the same room with you, how likely are you to randomly walk out of the room and talk to people who happen to be passing by? That answer should be your guide for where you give your attention in meetings. It's ok to think through ideas until you're bored. Don't read Slack just because the meeting conversation doesn't apply to you. "Sorry, can you repeat that" is one of the rudest things you can say to your colleagues.
 
@@ -50,6 +59,8 @@ Apply the same description as a private channel, except add in that the user exp
 * Start new channels like you would create a new JIRA ticket for something
 * Archive the channel when the project is done (and link to the channel in the actual JIRA ticket)
 
+Here's a visualization for how your team could be organized. Work is done in project channels. Team channels are public facing and welcoming for outsiders.
+![Slack Channel Viz](https://raw.githubusercontent.com/oiler/notes/master/assets/slack-viz-v1.png)
 
 ## Direct Messages
 * Be respectful for the number of messages you send in DMs. Group thoughts together. Assume the person you are writing is in the middle of screensharing to a large audience, and they forgot to mute or turn off notifications.
