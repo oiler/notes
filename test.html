@@ -1,0 +1,21 @@
+<html>
+<body>
+
+<button id="mybutton">click</button>
+
+<script>
+var pizza = {
+    toppings: ['mushrooms','meatballs'],
+    cook: function() {
+        console.log(this.toppings);
+    }
+}
+var button = document.getElementById('mybutton');
+button.addEventListener(
+    'click',
+    pizza.cook.bind(pizza)
+);
+
+</script>
+</body>
+</html>
