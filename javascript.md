@@ -10,10 +10,10 @@
 ## Invocation
 Four kinds of invocation:
 
-* function invocation: alert('Hello World!')
-* method invocation: console.log('Hello World!')
-* constructor invocation: new RegExp('\\d')
-* indirect invocation: alert.call(undefined, 'Hello World!')
+* function invocation: `alert('Hello World!')`
+* method invocation: `console.log('Hello World!')`
+* constructor invocation: `new RegExp('\\d')`
+* indirect invocation: `alert.call(undefined, 'Hello World!')`
 
 ## Truthiness
 * does a variable exist?
@@ -364,12 +364,13 @@ console.log('arrow:', pizzaa(["mushrooms", "onions", "peppers"]));
 ## Explainers
 * [binary floating point](http://rainsoft.io/how-three-dots-changed-javascript/)
 * [this](https://rainsoft.io/gentle-explanation-of-this-in-javascript/)
+* [manipultaing arrays](https://www.toptal.com/javascript/immutability-in-javascript-using-redux)
 
 ## More Vocabulary
 * **first-class functions** = functions are objects
 * **higher-order function** = functions can take one or more functions as arguments and can return a function as its result
 * **pure function** = a function where the return value is only determined by its input values, without observable side effects (iow, given the same input, it will return the same value every time no matter what else
 * **classical inheritance** = instances inherit from classes, usually with the *new* keyword; they create tight coupling or hierarchies/taxonomies
-* **prototypal Inheritanc** = instances inherit directly from other objects, usually with factory functions or the `Object.create()`
+* **prototypal inheritanc** = instances inherit directly from other objects, usually with factory functions or the `Object.create()`
 * **factory functions** = a factory functions is a function or method that returns objects
 
