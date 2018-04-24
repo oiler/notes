@@ -25,6 +25,7 @@ a { color:inherit; }
 * [snippets](https://justmarkup.com/log/2018/03/collection-of-css-snippets/)
 * [centering](https://css-tricks.com/centering-css-complete-guide/)
 * [normalize](https://github.com/necolas/normalize.css/blob/master/normalize.css)
+* [skeleton](https://github.com/dhg/Skeleton)
 
 ## normalize
 ```css
