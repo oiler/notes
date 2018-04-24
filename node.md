@@ -101,4 +101,16 @@ https://nodejs.org/api/fs.html
 
 
 
+### Examples
+npm init
+npm install --save-dev babel-preset-es2015
+touch .babelrc
+	{ "presets": ["es2015"] }
+npm install --save-dev gulp
+npm install --save-dev gulp-babel
+touch .gulpfile.js
 
+
+
+## rollup
+https://github.com/rollup/rollup
