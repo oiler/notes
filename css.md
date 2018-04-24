@@ -89,3 +89,12 @@ column-span: none | all;
 * Viewport Height (vh) 
 * Viewport Minimum (vmin) 
 * Viewport Maximum (vmax)
+
+### email client isolation
+```css
+.★:not(#★){ /* for targeting AOL */} 
+@media yahoo{/* for targeting Yahoo */} 
+u+ .body .foo{/* for targeting Gmail */} 
+#MessageWebViewDiv .foo{/* for targeting Samsung mail */} 
+[OWA] .foo{/* for targeting http://Outlook.com  */}
+```
