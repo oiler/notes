@@ -26,6 +26,7 @@ a { color:inherit; }
 * [centering](https://css-tricks.com/centering-css-complete-guide/)
 * [normalize](https://github.com/necolas/normalize.css/blob/master/normalize.css)
 * [skeleton](https://github.com/dhg/Skeleton)
+* [perf - drawing skeletons](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
 
 ## normalize
 ```css

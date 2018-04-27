@@ -83,6 +83,8 @@ https://spreadsheets.google.com/feeds/list/PUT-KEY-HERE/od6/public/values?alt=js
 aws s3 cp FILENAME s3://oiler/FOLDER/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
 
 ```
+[route53 dns guide](https://medium.com/@limichelle21/connecting-google-domains-to-amazon-s3-d0d9da467650)
+
 
 
 

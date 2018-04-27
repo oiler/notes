@@ -16,6 +16,10 @@ npm init
 	creates package.json
 package dependecies are _regular_ or _dev_
 
+## help
+`which node`
+`which npm`
+
 ## packages
 npm is a package manager, comes with Node
 install packages locally or globally
