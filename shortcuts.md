@@ -84,7 +84,7 @@ aws s3 cp FILENAME s3://oiler/FOLDER/ --grants read=uri=http://acs.amazonaws.com
 
 ```
 [route53 dns guide](https://medium.com/@limichelle21/connecting-google-domains-to-amazon-s3-d0d9da467650)
-
+[with cloudfront https](https://www.josephecombs.com/2018/03/05/how-to-make-an-AWS-S3-static-website-with-ssl)
 
 
 

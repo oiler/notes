@@ -18,6 +18,8 @@ html { box-sizing:border-box; }
 .classname { box-shadow:0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 /* color inherit */
 a { color:inherit; }
+
+.full-width { width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; }
 ```
 
 ## guides
@@ -27,6 +29,7 @@ a { color:inherit; }
 * [normalize](https://github.com/necolas/normalize.css/blob/master/normalize.css)
 * [skeleton](https://github.com/dhg/Skeleton)
 * [perf - drawing skeletons](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
+* [htmlshell](http://htmlshell.com/)
 
 ## normalize
 ```css
