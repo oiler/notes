@@ -303,7 +303,14 @@ console.log(typeof true); // expected output: "boolean"
 console.log(typeof declaredButUndefinedVariable); // expected output: "undefined";
 ```
 
-
+## [hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+```javascript
+for (var key in obj) {  
+    if (obj.hasOwnProperty(key)) {
+        // whatever
+    }
+}
+```
 
 ## [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 JS is single threaded, features a call stack and queue  
