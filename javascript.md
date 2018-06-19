@@ -295,6 +295,14 @@ $('.myDivClass').hide().css('color','black').show();
 
 
 
+## [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
+```javascript
+console.log(typeof 42); // expected output: "number"
+console.log(typeof 'blubber'); // expected output: "string"
+console.log(typeof true); // expected output: "boolean"
+console.log(typeof declaredButUndefinedVariable); // expected output: "undefined";
+```
+
 
 
 ## [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
