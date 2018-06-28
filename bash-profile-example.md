@@ -1,3 +1,4 @@
+```bash
 #source ~/.bash_profile
 
 # DEFAULT UTILITIES
@@ -37,4 +38,4 @@ ii () {
 }
 # list directory contents upon 'cd'
 cdls() { builtin cd "$@"; ll; }
-
+```
