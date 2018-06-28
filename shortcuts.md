@@ -69,16 +69,20 @@ year = 31536000
 
 ##  OS X hacks
 
-Kill DNS Cache
-`sudo killall -HUP mDNSResponder`
+Kill DNS Cache  
+* `sudo killall -HUP mDNSResponder`
+
 Kill screenshot sound
-`screencapture -x quiet.jpg`
+* `screencapture -x quiet.jpg`
+
 Change screenshot file type
-`defaults write com.apple.screencapture type -string "png"`
+* `defaults write com.apple.screencapture type -string "png"`
+
 Change screenshot file location
-`defaults write com.apple.screencapture location /folderlocation`
+* `defaults write com.apple.screencapture location /folderlocation`
+
 Show hidden files
-`defaults write com.apple.finder ShowAllFiles TRUE`
+* `defaults write com.apple.finder ShowAllFiles TRUE`
 
 ## google spreadsheet data
 ```
