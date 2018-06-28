@@ -67,11 +67,18 @@ week | 604800
 month | 2629000
 year = 31536000
 
-##  Kill DNS cache on OS X
+##  OS X hacks
 
-```
-sudo killall -HUP mDNSResponder
-```
+Kill DNS Cache
+`sudo killall -HUP mDNSResponder`
+Kill screenshot sound
+`screencapture -x quiet.jpg`
+Change screenshot file type
+`defaults write com.apple.screencapture type -string "png"`
+Change screenshot file location
+`defaults write com.apple.screencapture location /folderlocation`
+Show hidden files
+`defaults write com.apple.finder ShowAllFiles TRUE`
 
 ## google spreadsheet data
 ```
