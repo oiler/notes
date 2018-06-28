@@ -75,3 +75,5 @@ done
 plugins.txt is a list of plugin names, so this loops through that and installs
 
 
+## other
+[natelandau](https://gist.github.com/natelandau/10654137)
