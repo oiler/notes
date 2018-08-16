@@ -1,5 +1,5 @@
 ```bash
-#source ~/.bash_profile
+#!/bin/bash
 
 # DEFAULT UTILITIES
 alias cp='cp -iv'                           # Preferred 'cp' implementation
@@ -18,6 +18,7 @@ alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
 alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
 alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
 # FUNCTIONS
 # ff:       Find file under the current directory
@@ -38,4 +39,11 @@ ii () {
 }
 # list directory contents upon 'cd'
 cdls() { builtin cd "$@"; ll; }
+
+## NODE
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
+#. "/usr/local/opt/nvm/nvm.sh"
+
+#source ~/.bash_profile
 ```
