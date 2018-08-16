@@ -82,7 +82,17 @@ Change screenshot file location
 * `defaults write com.apple.screencapture location /folderlocation`
 
 Show hidden files
-* `defaults write com.apple.finder ShowAllFiles TRUE`
+* `defaults write com.apple.finder ShowAllFiles YES`
+
+Show pathbar
+* `defaults write com.apple.finder ShowPathbar -bool true`
+
+Install python3
+```
+brew install python3 pipenv
+python3 --version
+pip3 --version
+```
 
 ## google spreadsheet data
 ```

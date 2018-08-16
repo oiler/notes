@@ -11,6 +11,17 @@ when calling external source (ie, I/O), node apps run on single thread, so do on
 
 call stack = last in / first out data structure
 
+## install
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+nvm install node
+nvm use node
+node -v
+```
+
+npm install --global gulp-cli
+
+
 ## setup
 npm init
 	creates package.json
