@@ -1,17 +1,6 @@
-Node
-* single threaded
-* uses an event-loop
-* handles multiple concurrent operations well
-* non-blocking from the start
-	Cons
-	* not for CPU intensive tasks
-	* not for relational databases
-		use a diff applicationa and node proxy to the web
-when calling external source (ie, I/O), node apps run on single thread, so do one thing at a time. this is blocking. and why should avoid cpu heavy tasks.
+#Node
 
-call stack = last in / first out data structure
-
-## install
+## install via nvm
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
 nvm install node
@@ -19,15 +8,63 @@ nvm use node
 node -v
 ```
 
-npm install --global gulp-cli
+## global configs
+* gulp: 
+	`npm install --global gulp-cli`
+* always save as dependency
+	`npm config set save`
+* save as dep only use current version
+	`npm config set save-exact`
 
-
-## setup
-npm init
-	creates package.json
+## project setup
+`npm init` //creates package.json
 package dependecies are _regular_ or _dev_
 
-## help
+### limit node version
+```node
+{
+	"engines": {
+		"node": "4.2.1"
+	}
+}
+```
+
+## npm scripts as tooling
+```node
+{
+	"scripts": {
+		"prestart": "node buildScripts/startMessage.js",
+		"start": "node buildScripts/srcServer.js"
+	}
+}
+```
+
+concurrent
+```node
+{
+	"scripts": {
+		"start": "npm-run-all --parallel security-check open:src",
+		"open:src": "node build/src.js",
+		"security-check": "nsp check"
+	}
+}
+```
+
+## babel configs
+* use `.bablerc` for larger project, to keep config separated
+* for small projects, setting babel configs in `package.json`
+* use transpiler for linting
+
+.babelrc example
+```node
+{
+	"presets: {
+		"latest"
+	}
+}
+```
+
+## general help
 `which node`
 `which npm`
 
@@ -57,9 +94,20 @@ var has global, function scope
 let has limited scope (ES6)
 
 
+## general notes
+### overview
+* is single threaded
+* uses an event-loop
+* handles multiple concurrent operations well
+* non-blocking from the start
+	Cons
+	* not for CPU intensive tasks
+	* not for relational databases
+		use a diff applicationa and node proxy to the web
+when calling external source (ie, I/O), node apps run on single thread, so do one thing at a time. this is blocking. and why should avoid cpu heavy tasks.
+* call stack = last in / first out data structure
 
-
-## modules
+### modules
 three types of modules: core, file, npm
 * core: provided by node, use reserved names ([list of names](https://nodejs.org/api/))
 * file: user created, assigned to module.exports
@@ -73,7 +121,7 @@ can be imported in three different ways
 each script has its own scope, and including one does not pollute the current scope
 modules are cached automatically
 
-## npm
+### packages
 install package globally, if local leave off -g flag
 `npm install -g PACKAGE`
 .gitignore you node_modules directory, there's no need to commit it since another user will get able to install when they setup (with npm install and package.json)
@@ -108,13 +156,11 @@ to uninstall & remove as dependecy (from package.json)
 to get info about a specific package
 `npm view PACKAGE`
 
-## streams
+### streams
 https://nodejs.org/api/stream.html
 
-## fs
+### fs
 https://nodejs.org/api/fs.html
-
-
 
 ### Examples
 npm init
@@ -125,7 +171,5 @@ npm install --save-dev gulp
 npm install --save-dev gulp-babel
 touch .gulpfile.js
 
-
-
-## rollup
+### rollup
 https://github.com/rollup/rollup
