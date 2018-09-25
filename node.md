@@ -173,3 +173,12 @@ touch .gulpfile.js
 
 ### rollup
 https://github.com/rollup/rollup
+
+
+## cleanup
+```
+npm cache clean --force
+delete node_modules folder
+npm install
+``
+

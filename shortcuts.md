@@ -99,7 +99,17 @@ pip3 --version
 https://spreadsheets.google.com/feeds/list/PUT-KEY-HERE/od6/public/values?alt=json
 ```
 
-## S3 upload public
+## AWS CLI
+
+### Setup
+
+```
+brew install awscli
+aws --version
+aws configure
+```
+
+### S3 upload public
 ```
 aws s3 cp FILENAME s3://oiler/FOLDER/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
 
