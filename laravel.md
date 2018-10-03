@@ -27,29 +27,29 @@ composer create-project laravel/laravel newFolder
 ```
 
 ### Views
-display data
-{{ //code }}
+#### display data
+`{{ //code }}`
 
-layouts
-```laravel
+#### layouts
+```php
 @extends('layouts.master')
 ```
-modules
-```laravel
+#### modules
+```php
 @yields('content')
 ```
-inheritance
-```laravel
+#### inheritance
+```php
 @section('content)
 //stuff
 @endsection
 ```
-partial views
-```laravel
+#### partial views
+```php
 @include
 ```
-control structures
-```laravel
+#### control structures
+```php
 @if(2 === 2)
     <div>this is true</div>
 @else
@@ -60,44 +60,44 @@ control structures
     <div>{{ $i }}. iteration</div>
 @endfor
 ```
-xss protection
-```laravel
+#### xss protection
+```php
 {{ "<div>normal output <script>alert('hello');</script></div>" }}
 {!! "<div>unescaped output <script>alert('hello');</script></div>" !!}
 
 ```
-facades - static file including
-```laravel
+#### facades - static file including
+```php
 {{ URL::to('css/styles.css') }}
 ```
 
 ### Routing
-named routes
-```laravel
+#### named routes
+```php
 Route::get('page/about', function() {
 	return view('page.about');
 })->name('page.about');
 ```
 usage: `{{ route('page.about') }}`
 
-route parameters
-```laravel
-Route::get('post/{id}', function() {
+#### route parameters
+```php
+Route::get('post/{id}', function($id) {
 	return view('posts.index');
 })->name('posts.post');
 ```
 usage: `{{ route('posts.post', ['id' => 1]) }}`
 
-http post routes
-```laravel
+#### http post routes
+```php
 Route::post('admin/create', function() {
 	return view('posts.index');
 })->name('admin.create');
 ```
 usage: `<form action="{{ route('admin.create')" method="post">`
 
-group routes together
-```laravel
+#### group routes together
+```php
 Route::group(['prefix' => 'admin'], function() {
     Route::get('', function() {
         return view('admin.index');
@@ -107,5 +107,24 @@ Route::group(['prefix' => 'admin'], function() {
     })->name('admin.create');
 });
 ```
+
+### Response Handling
+#### basic examples
+`return view('blog.post');`
+`return 'just text';`
+`return Response::json(['name'=>'bill clay']);`
+`return redirect()->route('index');`
+
+#### pass data to a view
+```php
+Route::get('post/{id}', function($id) {
+    $post = [ 'title'=>'hello world', 'content'=>'some content text' ];
+    return view('posts.index', ['post'=>$post]);
+})->name('posts.post');
+```
+usage: `{{ $post['title'] }}`
+
+
+
 
 
