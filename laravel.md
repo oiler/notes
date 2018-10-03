@@ -1,8 +1,8 @@
-#Laravel
+# Laravel
 
-##Getting Started
+## Getting Started
 
-###Composer
+### Composer
 [Download Composer](https://getcomposer.org/download/)
 ```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -16,7 +16,7 @@ mv composer.phar /usr/local/bin/composer
 mv composer.phar /Applications/MAMP/bin/php/php7.2.1/bin/composer
 ```
 
-###Create project
+### Create project
 new project in existing folder
 ```bash
 composer create-project laravel/laravel --prefer-dist 
@@ -25,3 +25,87 @@ new project in new folder
 ```bash
 composer create-project laravel/laravel newFolder
 ```
+
+### Views
+display data
+{{ //code }}
+
+layouts
+```laravel
+@extends('layouts.master')
+```
+modules
+```laravel
+@yields('content')
+```
+inheritance
+```laravel
+@section('content)
+//stuff
+@endsection
+```
+partial views
+```laravel
+@include
+```
+control structures
+```laravel
+@if(2 === 2)
+    <div>this is true</div>
+@else
+    <div>this is false</div>
+@endif
+
+@for($i=0; $i<5; $i++)
+    <div>{{ $i }}. iteration</div>
+@endfor
+```
+xss protection
+```laravel
+{{ "<div>normal output <script>alert('hello');</script></div>" }}
+{!! "<div>unescaped output <script>alert('hello');</script></div>" !!}
+
+```
+facades - static file including
+```laravel
+{{ URL::to('css/styles.css') }}
+```
+
+### Routing
+named routes
+```laravel
+Route::get('page/about', function() {
+	return view('page.about');
+})->name('page.about');
+```
+usage: `{{ route('page.about') }}`
+
+route parameters
+```laravel
+Route::get('post/{id}', function() {
+	return view('posts.index');
+})->name('posts.post');
+```
+usage: `{{ route('posts.post', ['id' => 1]) }}`
+
+http post routes
+```laravel
+Route::post('admin/create', function() {
+	return view('posts.index');
+})->name('admin.create');
+```
+usage: `<form action="{{ route('admin.create')" method="post">`
+
+group routes together
+```laravel
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('', function() {
+        return view('admin.index');
+    })->name('admin.index');
+    Route::get('create', function() {
+        return view('admin.create');
+    })->name('admin.create');
+});
+```
+
+
