@@ -56,6 +56,15 @@ Use a specific username and password
 
 * * * 
 
+# WordPress
+
+## local setup
+```
+define('FS_METHOD', 'direct');
+```
+
+* * * 
+
 # General
 
 ## Time In Seconds
