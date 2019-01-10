@@ -17,7 +17,7 @@ node -v
 	`npm config set save-exact`
 
 ## project setup
-`npm init` //creates package.json
+`npm init --yes` //creates package.json
 package dependecies are _regular_ or _dev_
 
 ### limit node version
