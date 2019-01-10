@@ -27,28 +27,28 @@ composer create-project laravel/laravel newFolder
 ```
 
 ### Views
-#### display data
+display data
 `{{ //code }}`
 
-#### layouts
+layouts
 ```php
 @extends('layouts.master')
 ```
-#### modules
+modules
 ```php
 @yields('content')
 ```
-#### inheritance
+inheritance
 ```php
 @section('content)
 //stuff
 @endsection
 ```
-#### partial views
+partial views
 ```php
 @include
 ```
-#### control structures
+control structures
 ```php
 @if(2 === 2)
     <div>this is true</div>
@@ -60,19 +60,19 @@ composer create-project laravel/laravel newFolder
     <div>{{ $i }}. iteration</div>
 @endfor
 ```
-#### xss protection
+xss protection
 ```php
 {{ "<div>normal output <script>alert('hello');</script></div>" }}
 {!! "<div>unescaped output <script>alert('hello');</script></div>" !!}
 
 ```
-#### facades - static file including
+facades - static file including
 ```php
 {{ URL::to('css/styles.css') }}
 ```
 
 ### Routing
-#### named routes
+named routes
 ```php
 Route::get('page/about', function() {
 	return view('page.about');
@@ -80,7 +80,7 @@ Route::get('page/about', function() {
 ```
 usage: `{{ route('page.about') }}`
 
-#### route parameters
+route parameters
 ```php
 Route::get('post/{id}', function($id) {
 	return view('posts.index');
@@ -88,7 +88,7 @@ Route::get('post/{id}', function($id) {
 ```
 usage: `{{ route('posts.post', ['id' => 1]) }}`
 
-#### http post routes
+http post routes
 ```php
 Route::post('admin/create', function() {
 	return view('posts.index');
@@ -96,7 +96,7 @@ Route::post('admin/create', function() {
 ```
 usage: `<form action="{{ route('admin.create')" method="post">`
 
-#### group routes together
+group routes together
 ```php
 Route::group(['prefix' => 'admin'], function() {
     Route::get('', function() {
@@ -109,13 +109,13 @@ Route::group(['prefix' => 'admin'], function() {
 ```
 
 ### Response Handling
-#### basic examples
-`return view('blog.post');`
-`return 'just text';`
-`return Response::json(['name'=>'bill clay']);`
-`return redirect()->route('index');`
+basic examples
+`return view('blog.post');`  
+`return 'just text';`  
+`return Response::json(['name'=>'bill clay']);`  
+`return redirect()->route('index');`  
 
-#### pass data to a view
+pass data to a view
 ```php
 Route::get('post/{id}', function($id) {
     $post = [ 'title'=>'hello world', 'content'=>'some content text' ];
@@ -124,7 +124,18 @@ Route::get('post/{id}', function($id) {
 ```
 usage: `{{ $post['title'] }}`
 
+post request data
+```php
+Route::post('admin/create', function(Request $request) {
+    return redirect()
+        ->route('admin.index')
+        ->with('info', 'post created as title:' . $request->input('title'));
+})->name('admin.create');
+```
+usage: `@if(Session::has('info)) {{Session::get('info')}} @endif;`
 
-
+csrf token protection
+`<input type="hidden" name="_name" value="{{csrf_token()}}" />`
+ `{{csrf_field}}`
 
 
