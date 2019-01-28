@@ -30,6 +30,7 @@ a { color:inherit; }
 * [skeleton](https://github.com/dhg/Skeleton)
 * [perf - drawing skeletons](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
 * [htmlshell](http://htmlshell.com/)
+* [hsl colors](http://hslpicker.com/)
 
 ## normalize
 ```css
