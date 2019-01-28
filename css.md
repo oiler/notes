@@ -18,30 +18,50 @@ width: -webkit-calc(100% / 3 - 100px + 20px * 1);
 
 
 ### flexbox
-[mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
 
+links
+======
+* [mdn docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
+* [css tricks guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [flexbox demo sandbox](https://codepen.io/oiler/pen/jQowRw)
 
+notes
+======
 **flex container**
-```
+------------------
+```css
 display: flex | inline-flex;
 flex-direction: row | row-reverse | column | column-reverse;
 flex-wrap: nowrap | wrap | wrap-reverse;
-flex-flow: <‘flex-direction’> || <‘flex-wrap’>
-justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
-align-items: flex-start | flex-end | center | baseline | stretch;
-align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-
 ```
+`flex-flow: <‘flex-direction’> || <‘flex-wrap’>`
+* shorthand of flex-direction and flex-wrap 
+* default=row nowrap)
+
+`justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;`
+* defines the alignment along the main axis
+
+`align-items: flex-start | flex-end | center | baseline | stretch;`
+* defines the default behavior for how flex items are laid out along the cross axis
+
+`align-content: flex-start | flex-end | center | space-between | space-around | stretch;`
+* aligns a flex container's lines within when there is extra space in the cross-axis
+
 
 **flex items**
-```
+------------------
+```css
 order: <integer>; /* default is 0 */
 flex-grow: <number>; /* default 0 */
 flex-shrink: <number>; /* default 1 */
 flex-basis: <length> | auto; /* default auto */ 
-flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-align-self: auto | flex-start | flex-end | center | baseline | stretch;
 ```
+`flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
+* shorthand for flex-grow, flex-shrink and flex-basis
+* recommended use over individual properties
+
+`align-self: auto | flex-start | flex-end | center | baseline | stretch;`
+
 
 ### columns
 [css tricks](https://css-tricks.com/guide-responsive-friendly-css-columns/)
