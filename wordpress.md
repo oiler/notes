@@ -28,6 +28,19 @@
 
 ## Code Snippets
 
+```php
+//https://developer.wordpress.org/reference/classes/wp_query/parse_query/
+$args = array(
+  'numberposts' => 10,
+  'post_type'   => 'book'
+);
+$latest_books = get_posts( $args );
+
+```
+
+
+https://developer.wordpress.org/reference/functions/shortcode_atts/
+
 prevent php files from being called directly
 ```php
 if (!defined('ABSPATH')) {
@@ -40,4 +53,64 @@ include file
 if (is_admin()) }
     requre_once plugin_dir_path( __FILE__) . 'relative-path-file.php';
 }
+```
+
+add admin menu item
+```php
+function myplugin_add_toplevel_menu() {
+    add_menu_page( //use add_submenu_page for submenu
+        'MyPlugin Settings', //string $page_title, 
+        'MyPlugin', //string $menu_title, 
+        'manage_options', //string $capability, 
+        'myplugin', //string $menu_slug, 
+        'myplugin_display_settings_page', //callable $function = '', 
+        'dashicons-admin-generic', //string $icon_url = '',
+        null //$position = null 
+    );
+}
+add_action( 'admin_menu', 'myplugin_add_toplevel_menu' );
+```
+
+admin display settings callback
+```php
+function myplugin_display_settings_page() {
+    if ( ! current_user_can( 'manage_options' ) ) return;
+    ?>
+    <div class="wrap">
+        <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+        <form action="options.php" method="post">
+            <?php
+            settings_fields( 'myplugin_options' ); // output security fields
+            do_settings_sections( 'myplugin' ); // output setting sections
+            submit_button(); // submit button            
+            ?>
+        </form>
+    </div>
+    <?php
+}
+```
+
+admin settings
+```php
+function myplugin_register_settings() {
+    register_setting( 
+        'myplugin_options', //string   $option_group, 
+        'myplugin_options', //string   $option_name, 
+        'myplugin_callback_validate_options' //callable $sanitize_callback = ''
+    );
+    add_settings_section( 
+        'myplugin_section_login', //string   $id,
+        esc_html__('Customize Login Page', 'myplugin'), //string   $title,
+        'myplugin_callback_section_login', //callable $callback,
+        'myplugin'//string   $page
+    );
+    add_settings_field(
+        'custom_title', //string   $id, 
+        esc_html__('Custom Title', 'myplugin'), //string   $title,
+        'myplugin_callback_field_text', //callable $callback,
+        'myplugin', //string   $page,
+        'myplugin_section_login', //string   $section = 'default',
+        [ 'id' => 'custom_title', 'label' => esc_html__('Title attribute', 'myplugin') ] //array $args = []
+    );
+add_action( 'admin_init', 'myplugin_register_settings' );
 ```
