@@ -1,3 +1,30 @@
+## Conditionals
+https://codex.wordpress.org/Conditional_Tags
+
+* home page
+
+```
+if ( is_front_page() && is_home() ) {
+  // Default homepage
+} elseif ( is_front_page() ) {
+  // static homepage
+} elseif ( is_home() ) {
+  // blog page
+} else {
+  //everything else
+}
+```
+
+* is_single()
+* is_page()
+* is_category( '9' ) 
+* is_page_template( 'about.php' )
+* is_tag() 
+* is_search() 
+* is_archive() 
+
+
+
 ## Plugin Best Practices
 
 * use conditional loading (use is_single, is_page, etc)

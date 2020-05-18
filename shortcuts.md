@@ -103,6 +103,10 @@ python3 --version
 pip3 --version
 ```
 
+symlinks
+* `ln -s EXISTING_FILE_OR_DIRECTORY SYMLINK_NAME`
+* 'unlink SymLinkToRemove'
+
 ## google spreadsheet data
 ```
 https://spreadsheets.google.com/feeds/list/PUT-KEY-HERE/od6/public/values?alt=json
@@ -127,6 +131,17 @@ aws s3 cp FILENAME s3://oiler/FOLDER/ --grants read=uri=http://acs.amazonaws.com
 [with cloudfront https](https://www.josephecombs.com/2018/03/05/how-to-make-an-AWS-S3-static-website-with-ssl)
 
 
+### git commands
+
+* push branch as master (looking at you, WPEngine)
+```
+git push stage branchname:master
+```
+
+* delete branch on a remote
+```
+git push origin --delete branchname
+```
 
 
 
