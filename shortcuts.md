@@ -144,5 +144,16 @@ git push origin --delete branchname
 ```
 
 
+### github pages DNS settings
+
+* create CNAME with your subdomain pointing to your github account: `oiler.github.io.`
+* create A record pointing to one of github's servers:
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
 
 
