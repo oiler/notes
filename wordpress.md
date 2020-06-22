@@ -89,6 +89,7 @@ add_filter( 'image_size_names_choose','theme_custom_image_sizes' );
 * (functions reference directory)[https://developer.wordpress.org/reference/functions/]
 * (readme validator)[https://wordpress.org/plugins/developers/readme-validator]
 * (shortcode attrs)[https://developer.wordpress.org/reference/functions/shortcode_atts/]
+* (dashicons)[https://developer.wordpress.org/resource/dashicons/#id-alt]
 
 ---
 ## Post Revisions
