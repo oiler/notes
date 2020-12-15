@@ -1,4 +1,7 @@
 
+https://developers.google.com/analytics/devguides/collection/gtagjs/events
+https://developers.google.com/analytics/devguides/collection/analyticsjs/
+
 ## Vanilla JS click tracking
 
 Usage:

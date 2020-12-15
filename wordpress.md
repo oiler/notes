@@ -65,7 +65,7 @@ add_filter( 'image_size_names_choose','theme_custom_image_sizes' );
 | Name | Max-Width | Max-Height |
 | --- | --- | --- |
 | Thumbnail | 150 | 150 |
-| Medium | 30000 | 300 |
+| Medium | 300 | 300 |
 | Large | 1024 | 1024 |
 * These settings are customized in WP Admin
 * The Thumbnail WP default will force crop (this setting can be disabled)
@@ -273,3 +273,13 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 * (slash architecture)[https://jjj.blog/2012/12/slash-architecture-my-approach-to-building-wordpress-plugins/]
 * (mvc slides)[https://iandunn.name/content/presentations/wp-oop-mvc/mvc.php/]
 * (mvc template)[https://wordpress.org/plugins/wp-mvc]
+
+
+https://docs.wp-rocket.me/article/131-redirection-to-enforce-trailing-slash-on-urls
+# Force trailing slash
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteCond %{REQUEST_FILENAME} !\.(gif|jpg|png|jpeg|css|xml|txt|js|php|scss|webp|mp3|avi|wav|mp4|mov)$ [NC]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
