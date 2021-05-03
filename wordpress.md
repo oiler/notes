@@ -82,6 +82,23 @@ add_filter( 'image_size_names_choose','theme_custom_image_sizes' );
 
 ---
 
+## Directory Paths
+
+```
+get_template_directory_uri()
+get_stylesheet_directory_uri()
+get_stylesheet_uri()
+get_theme_root_uri()
+get_theme_root()
+get_theme_roots()
+get_stylesheet_directory()
+get_template_directory()
+```
+src: [https://paulund.co.uk/get-theme-directory-in-wordpress](https://paulund.co.uk/get-theme-directory-in-wordpress)
+
+
+---
+
 ## Other Important Links
 * (plugin APIs directory)(https://codex.wordpress.org/WordPress_API%27s)
 * (plugin API Filters reference)[https://codex.wordpress.org/Plugin_API/Filter_Reference]
