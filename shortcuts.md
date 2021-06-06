@@ -157,5 +157,14 @@ https://help.github.com/en/github/working-with-github-pages/managing-a-custom-do
 185.199.111.153
 ```
 
+### youtube-dl mp4 from youtube
 
+* get files
+```
+youtube-dl -F https://www.youtube.com/watch?v=RRsnMUQqPzA
+```
+* download mp3
+```
+youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=RRsnMUQqPzA
+```
 
