@@ -143,6 +143,10 @@ git push stage branchname:master
 git push origin --delete branchname
 ```
 
+* add another remote to push to two or more at once [src](https://gist.github.com/rvl/c3f156e117e22a25f242)
+```
+git remote set-url --add --push origin git@bitbucket.org:ccgmurdoch/my-project.git
+```
 
 ### github pages DNS settings
 
