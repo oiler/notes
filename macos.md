@@ -1,3 +1,10 @@
+
+## Finder - Show hidden files
+```
+defaults write com.apple.Finder AppleShowAllFiles true
+```
+
+
 https://github.com/zzolo/mac-dotfiles/blob/master/zzolo/install.sh
 
 
