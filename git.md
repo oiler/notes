@@ -1,4 +1,19 @@
 
+## New computer account setup
+```
+ssh-keygen -t ed25519 -C "YOUR EMAIL"
+eval "$(ssh-agent -s)"
+touch ~/.ssh/config
+
+    Host *
+      AddKeysToAgent yes
+      UseKeychain yes
+      IdentityFile ~/.ssh/id_ed25519
+
+ssh-add -K ~/.ssh/id_ed25519
+ssh -T git@github.com
+```
+
 
 ## Remote Server Git Setup
 
