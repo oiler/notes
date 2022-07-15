@@ -44,3 +44,31 @@ workon myvirtualenv
 
 pip3 install Django
 pip freeze
+
+
+
+## SETUP 
+
+### NODE via NVM
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install node
+nvm install --lts
+nvm use --lts
+nvm cache clear
+```
+
+and if you need a specific version
+```
+nvm install 10.19.0
+nvm alias default 10.19.0
+```
+other commands
+```
+nvm use 12
+nvm uninstall 12
+```
+
+
+
