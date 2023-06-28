@@ -1,4 +1,16 @@
 
+## Ignore files locally
+
+```
+
+Navigate to .git/info, in the project folder
+Open the exclude file in your editor
+Put in the files you want to ignore locally (path must be relative to root of project)
+Run the following command in the terminal (in your project folder) : git update-index --skip-worktree <path-names>
+```
+
+
+
 ## New computer account setup
 ```
 ssh-keygen -t ed25519 -C "YOUR EMAIL"
