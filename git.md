@@ -1,3 +1,10 @@
+## Push to two repos at once
+
+```
+git remote set-url --add --push prod NAME@URL
+``
+
+
 
 ## Ignore files locally
 
@@ -68,3 +75,5 @@ On Your Local Machine
     > `git remote add prod git@example.com:/var/www/example.com/example.git/`
 
 
+`git rm -r --cached .` 
+`git rm -r --cached name_of_file`
